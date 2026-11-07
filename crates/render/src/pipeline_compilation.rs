@@ -31,6 +31,7 @@ impl Plugin for PipelineCompilationPlugin {
         let device = world.resource::<RenderDevice>().clone();
         let info = (**world.resource::<RenderAdapterInfo>()).clone();
         if info.backend != wgpu::Backend::Vulkan
+            || cfg!(target_os = "android")
             || !device.features().contains(wgpu::Features::PIPELINE_CACHE)
         {
             return;
