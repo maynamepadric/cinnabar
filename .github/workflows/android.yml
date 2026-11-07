@@ -10,8 +10,6 @@ on:
       - packaging/icons/**
       - .github/workflows/android.yml
       - .github/workflows/package.yml
-  schedule:
-    - cron: "41 */6 * * *"
   workflow_dispatch:
 
 concurrency:
